@@ -18,16 +18,8 @@
 
     <div class="container my-5">
         <div class="row align-items-center">
-            <div class="col-md-6 text-center">
-                <img class="img-fluid rounded shadow" src="/images/music_notes.jpg" alt="Music background">
-            </div>
-            <div class="col-md-6">
+            <div>
                 <h2>Find Your Favorite Artists and Albums</h2>
-                <p>
-                    Explore artists, albums, and songs using data from the 
-                    <strong>MusicBrainz API</strong>. Type an artist name or album below 
-                    to learn more about their work and history.
-                </p>
 
                 <form action="/searchArtistInfo">
                     <label for="artist" class="form-label">Search Artist Info:</label>
@@ -42,7 +34,7 @@
                 </form>
 
                 <form action="/searchAlbum">
-                    <label for="album" class="form-label">Search by Album:</label>
+                    <label for="album" class="form-label">Search Album Info:</label>
                     <input type="text" name="album" id="album" class="form-control" placeholder="e.g. Thriller, Lemonade">
                     <button class="btn btn-outline-light mt-2">Search</button>
                 </form>
