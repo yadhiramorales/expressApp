@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Artist Results</title>
+</head>
+<body>
+    <h1 class="text-center bg-black p-5 text-white m-0">Artist Results:</h1>
+    <%- include("partials/navbar.ejs") %>
+
+    <div class="container mt-4">
+    <% if (!artists || artists.length === 0 || !artists[0]) { %>
+        <p>No artist found. Try another search!</p>
+    <% } else { 
+        const artist = artists[0]; %>
+        <!-- only getting top artist, but input in array form -->
+        <div class="card shadow-lg p-4">
+            <h2><%= artist.name %></h2>
+            <p><strong>Full Name:</strong> 
+            <%= artist.aliases?.find(a => a.type === 'Legal name')?.name || 'N/A' %>
+            </p>
+            <p><strong>Description:</strong> <%= artist.disambiguation || 'N/A' %></p>
+            <p><strong>Gender:</strong> <%= artist.gender || 'N/A' %></p>
+            <p><strong>Country:</strong> <%= artist.area?.name || artist.country || 'N/A' %></p>
+            <p><strong>City of Origin:</strong> <%= artist['begin-area']?.name || 'N/A' %></p>
+            <p><strong>Born:</strong> <%= artist['life-span']?.begin || 'N/A' %></p>
+            <p><strong>Aliases:</strong> 
+            <%= artist.aliases?.map(a => a.name).join(', ') || 'None' %>
+            </p>
+            <p><strong>Tags:</strong> 
+            <%= artist.tags?.map(t => t.name).join(', ') || 'None' %>
+            </p>
+        </div>
+    <% } %>
+  </div>
+</body>
+</html>
