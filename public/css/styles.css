@@ -1,7 +1,33 @@
 body{
-    /* text-align: center; */
+    text-align:left;
     background-image: url('../img/music-notes-background.jpg');
     background-size: 1900px;
     background-position: center;
     color:white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
 }
+
+h1 {
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+#aboutBodyMsg {
+    padding: 1.5rem;          
+    max-width: 900px;     
+    margin: 0 auto;        
+    text-align: left;     
+    background-color: rgba(0, 0, 0, 0.3);  
+    border-radius: 8px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
